@@ -1,0 +1,27 @@
+services:
+  _defaults:
+    public: true
+
+  oksydan.is_productslider.module:
+    class: Is_productslider
+    factory: [ 'Module', 'getInstanceByName' ]
+    public: false
+    arguments:
+      - 'is_productslider'
+
+  oksydan.is_productslider.repository.product_slider:
+    class: Oksydan\IsProductSlider\Repository\ProductSliderRepository
+    public: true
+    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+    arguments:
+      - Oksydan\IsProductSlider\Entity\ProductSlider
+
+  oksydan.is_productslider.configuration.product_slider_configuration:
+    class: Oksydan\IsProductSlider\Configuration\ProductSliderConfiguration
+    public: true
+
+  oksydan.is_productslider.presenter.product_slider_presenter:
+    class: Oksydan\IsProductSlider\Presenter\ProductSliderPresenter
+    public: true
+    arguments:
+      - "@=service('prestashop.adapter.legacy.context').getContext()"

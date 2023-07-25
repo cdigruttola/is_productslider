@@ -1,0 +1,32 @@
+database:
+  product_slider:
+    columns:
+      id_product_slider: INT AUTO_INCREMENT NOT NULL
+      active: TINYINT(1) NOT NULL
+      position: INT NOT NULL
+      type_products_show: VARCHAR(40) NOT NULL
+      product_ids: VARCHAR(255)
+      category_id: VARCHAR(255)
+    primary:
+      - id_product_slider
+    engine: InnoDb
+
+  product_slider_lang:
+    columns:
+      id_product_slider: INT NOT NULL
+      id_lang: INT NOT NULL
+      title: VARCHAR(40) NOT NULL
+      subtitle: VARCHAR(40) NOT NULL
+    primary:
+      - id_product_slider
+      - id_lang
+    engine: InnoDb
+
+  product_slider_shop:
+    columns:
+      id_product_slider: INT NOT NULL
+      id_shop: INT NOT NULL
+    primary:
+      - id_product_slider
+      - id_shop
+    engine: InnoDb

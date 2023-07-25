@@ -1,0 +1,48 @@
+productslider_controller:
+    path: /is_productslider/configuration
+    methods: [GET]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::index'
+
+productslider_controller_configuration_save:
+    path: /is_productslider/configuration
+    methods: [POST, PATCH]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::saveConfiguration'
+
+productslider_controller_create:
+    path: /is_productslider/create
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::create'
+
+productslider_controller_edit:
+    path: /is_productslider/{slideId}/edit
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\SliderProductsController::edit'
+    requirements:
+        slideId: \d+
+
+productslider_controller_delete:
+    path: /is_productslider/{slideId}/delete
+    methods: [GET, POST]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::delete'
+    requirements:
+        slideId: \d+
+
+productslider_controller_toggle_status:
+    path: /is_productslider/{slideId}/toggle
+    methods: [POST]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::toggleStatus'
+    requirements:
+        slideId: \d+
+
+productslider_controller_update_positions:
+    path: /is_productslider/update_positions
+    methods: [POST]
+    defaults:
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::updatePositionAction'
+
