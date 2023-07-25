@@ -30,6 +30,7 @@ if (file_exists(__DIR__ . '/vendor/autoload.php')) {
     require_once __DIR__ . '/vendor/autoload.php';
 }
 
+use Doctrine\ORM\EntityManagerInterface;
 use Oksydan\IsProductSlider\Configuration\ProductSliderConfiguration;
 use Oksydan\IsProductSlider\Entity\ProductSlider;
 use Oksydan\IsProductSlider\Installer\DatabaseYamlParser;
@@ -38,7 +39,6 @@ use Oksydan\IsProductSlider\Installer\Provider\DatabaseYamlProvider;
 use Oksydan\IsProductSlider\Presenter\ProductSliderPresenter;
 use Oksydan\IsProductSlider\Repository\ProductSliderRepository;
 use Oksydan\IsProductSlider\Translations\TranslationDomains;
-use Doctrine\ORM\EntityManagerInterface;
 use PrestaShop\PrestaShop\Adapter\SymfonyContainer;
 use PrestaShop\PrestaShop\Core\Module\WidgetInterface;
 use Symfony\Component\DependencyInjection\Exception\ServiceNotFoundException;
@@ -205,6 +205,7 @@ class Is_productslider extends Module implements WidgetInterface
         }
 
         PrestaShopLogger::addLog(__METHOD__);
+
         return $this->fetch($this->templateFile, $this->getCacheId('is_productslider'));
     }
 

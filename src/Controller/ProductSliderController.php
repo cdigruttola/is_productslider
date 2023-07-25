@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Oksydan\IsProductSlider\Controller;
 
+use Exception;
 use Oksydan\IsProductSlider\Entity\ProductSlider;
 use Oksydan\IsProductSlider\Filter\ProductSliderFilters;
 use Oksydan\IsProductSlider\Translations\TranslationDomains;
-use Exception;
 use PrestaShop\PrestaShop\Core\Grid\Position\Exception\PositionDataException;
 use PrestaShop\PrestaShop\Core\Grid\Position\Exception\PositionUpdateException;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;

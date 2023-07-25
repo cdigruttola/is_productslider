@@ -69,12 +69,11 @@ class ProductSliderType extends TranslatorAwareType
      */
     public function __construct(
         TranslatorInterface $translator,
-        array               $locales,
-        bool                $isMultistoreUsed,
-        LegacyContext       $context,
+        array $locales,
+        bool $isMultistoreUsed,
+        LegacyContext $context,
         ProductSliderConfiguration $sliderConfiguration
-    )
-    {
+    ) {
         parent::__construct($translator, $locales);
 
         $this->isMultistoreUsed = $isMultistoreUsed;
@@ -129,7 +128,7 @@ class ProductSliderType extends TranslatorAwareType
                 'template_collection' => '<span class="label">%s</span><i class="material-icons delete">clear</i>',
                 'required' => false,
                 'label' => $this->trans('Products', TranslationDomains::TRANSLATION_DOMAIN_ADMIN),
-                'limit' => $this->sliderConfiguration->getProductSliderMaxProduct()
+                'limit' => $this->sliderConfiguration->getProductSliderMaxProduct(),
             ]);
 
         if ($this->isMultistoreUsed) {

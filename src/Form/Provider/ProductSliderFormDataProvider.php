@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Oksydan\IsProductSlider\Form\Provider;
 
-use Oksydan\IsProductSlider\Entity\ProductSlider;
 use Doctrine\ORM\EntityRepository;
+use Oksydan\IsProductSlider\Entity\ProductSlider;
 use PrestaShop\PrestaShop\Adapter\Shop\Context;
 use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataProvider\FormDataProviderInterface;
 use PrestaShopBundle\Entity\Repository\LangRepository;

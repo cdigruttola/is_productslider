@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Oksydan\IsProductSlider\Form\DataHandler;
 
-use Oksydan\IsProductSlider\Entity\ProductSlider;
-use Oksydan\IsProductSlider\Entity\ProductSliderLang;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Oksydan\IsProductSlider\Entity\ProductSlider;
+use Oksydan\IsProductSlider\Entity\ProductSliderLang;
 use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler\FormDataHandlerInterface;
 use PrestaShopBundle\Entity\Repository\LangRepository;
 use PrestaShopBundle\Entity\Shop;

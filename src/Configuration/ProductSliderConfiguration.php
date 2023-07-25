@@ -55,5 +55,4 @@ class ProductSliderConfiguration
     {
         return Configuration::get(self::PRODUCT_SLIDER_MAX_PRODUCT);
     }
-
 }

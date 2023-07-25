@@ -28,8 +28,8 @@ declare(strict_types=1);
 namespace Oksydan\IsProductSlider\Presenter;
 
 use Category;
-use Oksydan\IsProductSlider\ProductSearchProvider\ProductSliderProductSearchProvider;
 use Context;
+use Oksydan\IsProductSlider\ProductSearchProvider\ProductSliderProductSearchProvider;
 use PrestaShop\PrestaShop\Adapter\Category\CategoryProductSearchProvider;
 use PrestaShop\PrestaShop\Core\Product\Search\ProductSearchContext;
 use PrestaShop\PrestaShop\Core\Product\Search\ProductSearchQuery;
