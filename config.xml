@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <module>
     <name>is_productslider</name>
-    <displayName><![CDATA[Slider products]]></displayName>
+    <displayName><![CDATA[Product Slider]]></displayName>
     <version><![CDATA[1.0.0]]></version>
     <description><![CDATA[Products slider on Home page is an easy way to increase your sales.]]></description>
     <author><![CDATA[cdigruttola]]></author>

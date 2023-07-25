@@ -28,7 +28,7 @@
         {block name='slider_product_header'}
             <div class="featured-products__header d-flex align-items-center mb-3">
                 {block name='slider_product_title'}
-                    <h2>{slider.title}</h2>
+                    <h2>{$slider.title}</h2>
                 {/block}
                 <div class="featured-products__navigation d-flex flex-grow-0 flex-shrink-0 ml-auto">
                     <div class="swiper-button-prev swiper-button-custom position-static">
@@ -41,11 +41,17 @@
                     </div>
                 </div>
             </div>
+            {block name='slider_product_subtitle'}
+                {if !empty($slider.subtitle)}
+                    <h3>{$slider.subtitle}</h3>
+                {/if}
+            {/block}
         {/block}
 
         {$sliderConfig = [
-        'speed' => ${speed},
-        'pause' => ${pause},
+        'speed' => {$speed},
+        'pause' => {$pause},
+        'loop' => {$wrap},
         'breakpoints' => [
         '320' => [
         'slidesPerView' => 2
@@ -56,10 +62,12 @@
         '992' => [
         'slidesPerView' => 4
         ]
-        ]
+        ],
+        'autoplay'=>['delay' =>5000]
         ]}
 
-        <div class="swiper product-slider py-1 my-n1" data-swiper='{block name="slider_product_slider_options"}{$sliderConfig|json_encode}{/block}'>
+        <div class="swiper product-slider py-1 my-n1"
+             data-swiper='{block name="slider_product_slider_options"}{$sliderConfig|json_encode}{/block}'>
             {block name='slider_product_products'}
                 <div class="featured-products__slider swiper-wrapper {block name='slider_product_slider_class'}{/block}">
                     {foreach from=$slider.products item="product"}

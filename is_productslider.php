@@ -61,7 +61,7 @@ class Is_productslider extends Module implements WidgetInterface
         $this->bootstrap = true;
         parent::__construct();
 
-        $this->displayName = $this->trans('Slider products', [], TranslationDomains::TRANSLATION_DOMAIN_ADMIN);
+        $this->displayName = $this->trans('Product Slider', [], TranslationDomains::TRANSLATION_DOMAIN_ADMIN);
         $this->description = $this->trans('Products slider on Home page is an easy way to increase your sales.', [], TranslationDomains::TRANSLATION_DOMAIN_ADMIN);
         $this->confirmUninstall = $this->trans('Are you sure you want to uninstall this module?', [], TranslationDomains::TRANSLATION_DOMAIN_ADMIN);
         $this->templateFile = 'module:is_productslider/views/templates/hook/is_productslider.tpl';
@@ -210,7 +210,7 @@ class Is_productslider extends Module implements WidgetInterface
 
     public function getWidgetVariables($hookName = null, array $configuration = [])
     {
-        $sliders = $this->getSliderRepository()->getActiveSliderByLangAndStoreId($this->context->language->id, $this->context->shop->id);
+        $sliders = $this->getSliderRepository()->getActiveProductSliderByLangAndStoreId($this->context->language->id, $this->context->shop->id);
 
         if (!empty($sliders)) {
             $slidersPresented = [];
