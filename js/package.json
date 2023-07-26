@@ -6,7 +6,7 @@
     "build": "webpack --progress --mode=production",
     "dev": "webpack --progress --debug --display-chunks --watch --mode=development"
   },
-  "author": "PrestaShop",
+  "author": "cdigruttola",
   "license": "AFL-3.0",
   "devDependencies": {
     "esbuild-loader": "^2.18.0",
