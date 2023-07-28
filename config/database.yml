@@ -15,8 +15,8 @@ database:
     columns:
       id_product_slider: INT NOT NULL
       id_lang: INT NOT NULL
-      title: VARCHAR(40) NOT NULL
-      subtitle: VARCHAR(40) NOT NULL
+      title: VARCHAR(255) NOT NULL
+      subtitle: VARCHAR(255) NOT NULL
     primary:
       - id_product_slider
       - id_lang

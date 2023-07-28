@@ -29,8 +29,8 @@ window.sliderProduct = (function () {
       const addButton = $('#add-related-product-button');
       const resetButton = $('#reset_related_product');
       const relatedContent = $('#related-content');
-      const productItems = $('#slider_product_ids-data');
-      const searchProductsBar = $('#slider_product_ids');
+      const productItems = $('#product_slider_product_ids-data');
+      const searchProductsBar = $('#product_slider_product_ids');
 
       addButton.on('click', (e) => {
         e.preventDefault();
