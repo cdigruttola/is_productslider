@@ -20,7 +20,7 @@ productslider_controller_edit:
     path: /is_productslider/{slideId}/edit
     methods: [GET, POST]
     defaults:
-        _controller: 'Oksydan\IsProductSlider\Controller\SliderProductsController::edit'
+        _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::edit'
     requirements:
         slideId: \d+
 
