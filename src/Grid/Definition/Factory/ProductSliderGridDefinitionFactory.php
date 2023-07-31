@@ -156,7 +156,7 @@ class ProductSliderGridDefinitionFactory extends AbstractGridDefinitionFactory
                         'reset_route_params' => [
                             'filterId' => self::GRID_ID,
                         ],
-                        'redirect_route' => 'admin_faq',
+                        'redirect_route' => 'productslider_controller',
                     ])
                     ->setAssociatedColumn('actions')
             );
