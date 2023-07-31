@@ -156,6 +156,6 @@ services:
   oksydan.is_productslider.grid.position_definition:
     class: PrestaShop\PrestaShop\Core\Grid\Position\PositionDefinition
     arguments:
-      - 'slider'
+      - 'product_slider'
       - 'id_product_slider'
       - 'position'
