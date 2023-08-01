@@ -204,8 +204,6 @@ class Is_productslider extends Module implements WidgetInterface
             $this->smarty->assign($variables);
         }
 
-        PrestaShopLogger::addLog(__METHOD__);
-
         return $this->fetch($this->templateFile, $this->getCacheId('is_productslider'));
     }
 
