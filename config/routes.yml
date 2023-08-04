@@ -17,28 +17,28 @@ productslider_controller_create:
         _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::create'
 
 productslider_controller_edit:
-    path: /is_productslider/{slideId}/edit
+    path: /is_productslider/{sliderId}/edit
     methods: [GET, POST]
     defaults:
         _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::edit'
     requirements:
-        slideId: \d+
+        sliderId: \d+
 
 productslider_controller_delete:
-    path: /is_productslider/{slideId}/delete
+    path: /is_productslider/{sliderId}/delete
     methods: [GET, POST]
     defaults:
         _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::delete'
     requirements:
-        slideId: \d+
+        sliderId: \d+
 
 productslider_controller_toggle_status:
-    path: /is_productslider/{slideId}/toggle
+    path: /is_productslider/{sliderId}/toggle
     methods: [POST]
     defaults:
         _controller: 'Oksydan\IsProductSlider\Controller\ProductSliderController::toggleStatus'
     requirements:
-        slideId: \d+
+        sliderId: \d+
 
 productslider_controller_update_positions:
     path: /is_productslider/update_positions
