@@ -80,7 +80,7 @@ class ProductSliderGridDefinitionFactory extends AbstractGridDefinitionFactory
                         'field' => 'active',
                         'primary_field' => 'id_product_slider',
                         'route' => 'productslider_controller_toggle_status',
-                        'route_param_name' => 'slideId',
+                        'route_param_name' => 'sliderId',
                     ])
             )
             ->add(
@@ -92,7 +92,7 @@ class ProductSliderGridDefinitionFactory extends AbstractGridDefinitionFactory
                                     ->setIcon('edit')
                                     ->setOptions([
                                         'route' => 'productslider_controller_edit',
-                                        'route_param_name' => 'slideId',
+                                        'route_param_name' => 'sliderId',
                                         'route_param_field' => 'id_product_slider',
                                     ])
                             )
@@ -102,7 +102,7 @@ class ProductSliderGridDefinitionFactory extends AbstractGridDefinitionFactory
                                     ->setIcon('delete')
                                     ->setOptions([
                                         'route' => 'productslider_controller_delete',
-                                        'route_param_name' => 'slideId',
+                                        'route_param_name' => 'sliderId',
                                         'route_param_field' => 'id_product_slider',
                                         'confirm_message' => $this->trans(
                                             'Delete selected item?',
