@@ -201,20 +201,21 @@ class ProductSliderController extends FrameworkBundleAdminController
             ->findOneBy(['id' => $sliderId]);
 
         if (empty($slider)) {
-            return $this->json([
+            $response = [
                 'status' => false,
-                'message' => sprintf('Slider %d doesn\'t exist', $sliderId),
-            ]);
+                'message' => sprintf('Entity %d doesn\'t exist', $sliderId),
+            ];
+            $errors = [$response];
+            $this->flashErrors($errors);
+
+            return $this->redirectToRoute('productslider_controller');
         }
 
         try {
             $slider->setActive(!$slider->getActive());
             $entityManager->flush();
 
-            $response = [
-                'status' => true,
-                'message' => $this->trans('The status has been successfully updated.', 'Admin.Notifications.Success'),
-            ];
+            $this->addFlash('success', $this->trans('The status has been successfully updated.', 'Admin.Notifications.Success'));
         } catch (\Exception $e) {
             $response = [
                 'status' => false,
@@ -224,9 +225,11 @@ class ProductSliderController extends FrameworkBundleAdminController
                     $e->getMessage()
                 ),
             ];
+            $errors = [$response];
+            $this->flashErrors($errors);
         }
 
-        return $this->json($response);
+        return $this->redirectToRoute('productslider_controller');
     }
 
     public function updatePositionAction(Request $request): Response
