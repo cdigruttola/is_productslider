@@ -84,6 +84,7 @@ class ProductSliderFormDataHandler implements FormDataHandlerInterface
      */
     public function update($id, array $data): int
     {
+        /** @var ProductSlider $slider */
         $slider = $this->entityManager->getRepository(ProductSlider::class)->find($id);
 
         $slider->setActive($data['active']);
@@ -94,7 +95,7 @@ class ProductSliderFormDataHandler implements FormDataHandlerInterface
 
         foreach ($this->languages as $language) {
             $langId = (int) $language['id_lang'];
-            $imageSliderLang = $slider->getSliderLangByLangId($langId);
+            $imageSliderLang = $slider->getProductSliderLangByLangId($langId);
 
             if (null === $imageSliderLang) {
                 continue;
