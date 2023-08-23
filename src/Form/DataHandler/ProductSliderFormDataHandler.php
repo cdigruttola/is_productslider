@@ -6,6 +6,7 @@ namespace Oksydan\IsProductSlider\Form\DataHandler;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
+use Oksydan\IsImageslider\Entity\ImageSliderLang;
 use Oksydan\IsProductSlider\Entity\ProductSlider;
 use Oksydan\IsProductSlider\Entity\ProductSliderLang;
 use PrestaShop\PrestaShop\Core\Form\IdentifiableObject\DataHandler\FormDataHandlerInterface;
@@ -95,15 +96,25 @@ class ProductSliderFormDataHandler implements FormDataHandlerInterface
 
         foreach ($this->languages as $language) {
             $langId = (int) $language['id_lang'];
-            $imageSliderLang = $slider->getProductSliderLangByLangId($langId);
+            $productSliderLang = $slider->getProductSliderLangByLangId($langId);
 
-            if (null === $imageSliderLang) {
-                continue;
+            $newEntity = false;
+            if (null === $productSliderLang) {
+                $productSliderLang = new ProductSliderLang();
+                $lang = $this->langRepository->findOneById($langId);
+                $productSliderLang->setLang($lang);
+                $newEntity = true;
+
             }
 
-            $imageSliderLang
+            $productSliderLang
                 ->setTitle($data['title'][$langId] ?? '')
                 ->setSubtitle($data['subtitle'][$langId] ?? '');
+
+            if($newEntity) {
+                $slider->addProductSliderLang($productSliderLang);
+            }
+
         }
 
         $this->entityManager->flush();
