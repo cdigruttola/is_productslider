@@ -32,18 +32,20 @@ import ReloadListActionExtension from '@PSJs/components/grid/extension/reload-li
 import ColumnTogglingExtension from '@PSJs/components/grid/extension/column-toggling-extension';
 import ExportToSqlManagerExtension from '@PSJs/components/grid/extension/export-to-sql-manager-extension';
 import FormSubmitButton from '@PSJs/components/form-submit-button';
+import PositionExtension from '@PSJs/components/grid/extension/position-extension';
 
 const {$} = window
 
 $(() => {
-    const recipeGrid = new Grid('is_productslider')
-    recipeGrid.addExtension(new SortingExtension());
-    recipeGrid.addExtension(new LinkRowActionExtension());
-    recipeGrid.addExtension(new SubmitRowActionExtension());
-    recipeGrid.addExtension(new FiltersResetExtension());
-    recipeGrid.addExtension(new ReloadListActionExtension());
-    recipeGrid.addExtension(new ColumnTogglingExtension());
-    recipeGrid.addExtension(new ExportToSqlManagerExtension());
+  const productSliderGrid = new Grid('is_productslider')
+  productSliderGrid.addExtension(new SortingExtension());
+  productSliderGrid.addExtension(new LinkRowActionExtension());
+  productSliderGrid.addExtension(new SubmitRowActionExtension());
+  productSliderGrid.addExtension(new FiltersResetExtension());
+  productSliderGrid.addExtension(new ReloadListActionExtension());
+  productSliderGrid.addExtension(new ColumnTogglingExtension());
+  productSliderGrid.addExtension(new ExportToSqlManagerExtension());
+  productSliderGrid.addExtension(new PositionExtension(productSliderGrid));
 
-    new FormSubmitButton();
+  new FormSubmitButton();
 });
