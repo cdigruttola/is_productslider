@@ -133,7 +133,7 @@ services:
       - '@prestashop.core.hook.dispatcher'
       - '@oksydan.is_productslider.product_slider_configuration.form_provider'
       - 'Oksydan\IsProductSlider\Form\ProductSliderConfigurationType'
-      - 'ConfigurationForm'
+      - 'ProductSliderConfigurationForm'
 
   oksydan.is_productslider.form.product_slider_type:
     class: 'Oksydan\IsProductSlider\Form\ProductSliderType'
